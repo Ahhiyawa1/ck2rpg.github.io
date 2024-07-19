@@ -28,24 +28,32 @@ function provinceTurn() {
 function setSkinColorOnLocation(c, p) {
     let y;
     if (p.y <= 2048) {
-        y = p.y / 2048
+        y = p.y / 2048;
+    } else if (p.y <= 4096) {
+        y = 1 - (p.y / 4096);
     } else {
-        y = 1 - (p.y / 4096)
+        y = 1 - ((p.y - 4096) / 2659);
     }
+
     let x;
     if (p.x <= 4096) {
         x = 1 - (p.x / 4096);
+    } else if (p.x <= 8192) {
+        x = p.x / 8192;
     } else {
-        x = p.x / 8192
+        x = (p.x - 8192) / 8198;
     }
+
     let lowX = x - 0.1;
     if (lowX < 0.01) {
-        lowX = 0.05
+        lowX = 0.05;
     }
-    let lowY = y - 0.1
+
+    let lowY = y - 0.1;
     if (lowY < 0.01) {
-        lowY = 0.05
+        lowY = 0.05;
     }
+
     c.genes.skin = {
         chances: [
             {
@@ -56,8 +64,9 @@ function setSkinColorOnLocation(c, p) {
                 highY: y
             }
         ]
-    }
+    };
 }
+
 
 function scribe(t) {
     hist.log.push(`${t}\n`)

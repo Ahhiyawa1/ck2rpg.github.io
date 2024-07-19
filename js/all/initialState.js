@@ -2,8 +2,8 @@ let bookText = aliceText.split("");
 let currentBookPosition = 0;
 
 let settings = {}
-settings.width = 8192 //8192 4096
-settings.height = 4096 //4096 2048
+settings.width = 16490 //8192 4096
+settings.height = 6755 //4096 2048
 settings.tooSmallProvince = 900 // 900 was my default before
 settings.horizontalSpread = false; // the new try, not working
 settings.verticalSpread = true; //the original I've been using
@@ -67,7 +67,7 @@ function createVaryRange() {
 
 
 function modifyClimate(t) {
-  let mod = settings.width / 8192;
+  let mod = settings.width / 16490;
   t.lower = Math.floor(t.lowerBase * mod);
   t.upper = Math.floor(t.upperBase * mod);
   if (t.plains) {
@@ -116,8 +116,8 @@ limits.cold = {
   lowerBase: 2866,
   plains: 3300,
   plainsBase: 3300,
-  upper: 4096,
-  upperBase: 4096
+  upper: 6755,
+  upperBase: 6755
 }
 
 limits.cold.varyRange = createVaryRange();

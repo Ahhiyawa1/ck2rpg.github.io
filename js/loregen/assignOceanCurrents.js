@@ -1,6 +1,6 @@
 function determineOceanCurrents(provinces) {
     const width = 8192;
-    const height = 4096;
+    const height = 6878;
     const equatorY = 496;
     const oceanCurrents = [];
 
